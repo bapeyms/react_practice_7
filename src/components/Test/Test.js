@@ -1,6 +1,15 @@
 import './Test.css';
+import React, { useState } from 'react';
 
 export function Test(props) {
+
+  // const [selectedAnswer, setSelectedAnswer] = useState;
+  // function handleSelect() {
+  //   if (selectedAnswer !== null) {
+  //     props
+  //   }
+  // }
+
   return <>
   <div className="Test">
     <p>{props.obj.question}</p>
@@ -19,7 +28,7 @@ export function Test(props) {
 
     <div className="choice-buttons">
       <button>Skip</button>
-      <button>Select</button>
+      <button onClick={props.nextQuestion}>Select</button>
       <button>Finish</button>
     </div>
     

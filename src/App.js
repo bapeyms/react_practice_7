@@ -1,5 +1,6 @@
 import './App.css';
 import Test from './components/Test/Test';
+import React, { useState } from 'react';
 
 const testArr = [
   {
@@ -55,9 +56,19 @@ const testArr = [
 ]
 
 function App() {
+
+  const [currentQuestion, setCurrentQuestion] = useState;
+  function nextQuestion() {
+    if (currentQuestion < testArr.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    }
+  }
   return (
     <div className="App">
-      <Test obj={testArr[0]}></Test>
+      <Test 
+      obj={testArr[currentQuestion]} 
+      nextQuestion={nextQuestion}
+      />
     </div>
   );
 }
