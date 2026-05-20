@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import Test from './components/Test/Test';
+
+const testArr = [
+  {
+    question: "Question 1?",
+    options: [
+      "Option 1",
+      "Option 2",
+      "Option 3",
+      "Option 4"
+    ],
+    correct: 3
+  },
+  {
+    question: "Question 2?",
+    options: [
+      "Option 1",
+      "Option 2",
+      "Option 3",
+      "Option 4"
+    ],
+    correct: 1
+  },
+  {
+    question: "Question 3?",
+    options: [
+      "Option 1",
+      "Option 2",
+      "Option 3",
+      "Option 4"
+    ],
+    correct: 2
+  }
+]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
