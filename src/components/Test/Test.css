@@ -1,1 +1,8 @@
 .Test {}
+
+.active {
+    background-color: rgb(174, 247, 174);
+}
+.non-active {
+    background-color: gainsboro;
+}

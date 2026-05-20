@@ -16,10 +16,10 @@ const testArr = [
   {
     question: "Question 2?",
     options: [
-      "Option 1",
-      "Option 2",
-      "Option 3",
-      "Option 4"
+      "Option 11",
+      "Option 22",
+      "Option 33",
+      "Option 44"
     ],
     correct: 1
   },
@@ -57,7 +57,7 @@ const testArr = [
 
 function App() {
 
-  const [currentQuestion, setCurrentQuestion] = useState;
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   function nextQuestion() {
     if (currentQuestion < testArr.length - 1) {
       setCurrentQuestion(currentQuestion + 1);

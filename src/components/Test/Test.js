@@ -1,14 +1,10 @@
 import './Test.css';
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 
 export function Test(props) {
 
-  // const [selectedAnswer, setSelectedAnswer] = useState;
-  // function handleSelect() {
-  //   if (selectedAnswer !== null) {
-  //     props
-  //   }
-  // }
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [isSkipped, setIsSkipped] = useState(false);
 
   return <>
   <div className="Test">
@@ -20,10 +16,17 @@ export function Test(props) {
     </ol>
     <p>Select an answer:</p>
     <div className="answer-buttons">
-      <button>A</button>
-      <button>B</button>
-      <button>C</button>
-      <button>D</button>
+      <button className={selectedAnswer === "A"?"active":"non-active"}
+      onClick={() => {setSelectedAnswer("A"); setIsSkipped(false)}}>A</button>
+      
+      <button className={selectedAnswer === "B"?"active":"non-active"}
+      onClick={() => setSelectedAnswer("B")}>B</button>
+      
+      <button className={selectedAnswer === "C"?"active":"non-active"}
+      onClick={() => setSelectedAnswer("C")}>C</button>
+      
+      <button className={selectedAnswer === "D"?"active":"non-active"}
+      onClick={() => setSelectedAnswer("D")}>D</button>
     </div>
 
     <div className="choice-buttons">
