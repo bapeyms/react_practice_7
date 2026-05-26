@@ -1,4 +1,7 @@
-.Test {}
+.Test {
+    background-color: snow;
+    padding: 10px;
+}
 
 .active {
     background-color: rgb(174, 247, 174);
@@ -6,3 +9,4 @@
 .non-active {
     background-color: gainsboro;
 }
+
