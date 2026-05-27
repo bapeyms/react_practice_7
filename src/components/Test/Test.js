@@ -4,7 +4,26 @@ import React, { use, useState } from 'react';
 export function Test(props) {
 
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  const [isSkipped, setIsSkipped] = useState(false);
+
+  function handleSelect() {
+    if (selectedAnswer === "") {
+      alert("Choose an answer!");
+    }
+
+    const answerNumber = {
+      A: 1,
+      B: 2,
+      C: 3,
+      D: 4
+    }
+
+    props.nextQuestion(answerNumber[selectedAnswer]);
+    setSelectedAnswer("");
+  }
+  function handleSkip() {
+    setSelectedAnswer("");
+    props.skipQuestion();
+  }
 
   return <>
   <div className="Test">
@@ -30,9 +49,12 @@ export function Test(props) {
     </div>
 
     <div className="choice-buttons">
-      <button>Skip</button>
-      <button onClick={props.nextQuestion}>Select</button>
-      <button>Finish</button>
+      <button onClick={handleSkip}>Skip</button>
+      <button onClick={handleSelect}>Select</button>
+      {props.isLastQuestion && (
+        <button onClick={handleSelect}>Finish</button>
+      )}
+      
     </div>
     
   </div>
