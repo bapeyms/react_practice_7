@@ -61,8 +61,8 @@ function App() {
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
 
-  function nextQuestion() {
-    if(selectedAnswer === testArr[currentQuestion]) {
+  function nextQuestion(selectedAnswer) {
+    if(selectedAnswer === testArr[currentQuestion].correct) {
       setScore(score + 1);
     }
     if (currentQuestion === testArr.length - 1){

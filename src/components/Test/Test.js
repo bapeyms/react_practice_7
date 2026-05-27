@@ -36,7 +36,7 @@ export function Test(props) {
     <p>Select an answer:</p>
     <div className="answer-buttons">
       <button className={selectedAnswer === "A"?"active":"non-active"}
-      onClick={() => {setSelectedAnswer("A"); setIsSkipped(false)}}>A</button>
+      onClick={() => {setSelectedAnswer("A"); }}>A</button>
       
       <button className={selectedAnswer === "B"?"active":"non-active"}
       onClick={() => setSelectedAnswer("B")}>B</button>
@@ -51,7 +51,7 @@ export function Test(props) {
     <div className="choice-buttons">
       <button onClick={handleSkip}>Skip</button>
       <button onClick={handleSelect}>Select</button>
-      {props.isLastQuestion && (
+      {props.finished && (
         <button onClick={handleSelect}>Finish</button>
       )}
       
