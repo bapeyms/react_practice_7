@@ -8,6 +8,7 @@ export function Test(props) {
   function handleSelect() {
     if (selectedAnswer === "") {
       alert("Choose an answer!");
+      return;
     }
 
     const answerNumber = {

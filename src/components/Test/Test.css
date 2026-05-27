@@ -1,9 +1,9 @@
 .Test {
     background-color: snow;
-    border: 1px solid black;
     width: 100vw;
     height: 35vh;
     padding-left: 10px;
+    padding-top: 10px;
 }
 .answer-buttons {
     display: flex;
@@ -35,10 +35,8 @@
     border: 2px solid aquamarine;
 }
 
-.active {
+.answer-buttons .active {
     background-color: rgb(174, 247, 174);
-}
-.non-active {
-    background-color: gainsboro;
+    border: 2px solid rgb(174, 247, 174);
 }
 

@@ -79,20 +79,18 @@ function App() {
     else {
       setCurrentQuestion(currentQuestion + 1);
     }
-
-    if(finished) {
-      return (
-        <div>
-          <h1>Test finished!</h1>
-          <h2>
-            Correct answers: {score} / {testArr.length}
-          </h2>
-        </div>
-      )
-    }
   }
 
-
+  if(finished) {
+    return (
+    <div className="finishedTest">
+      <h1>Test finished!</h1>
+      <h2>
+        Correct answers: {score} / {testArr.length}
+        </h2>
+    </div>
+    )
+  }
   return (
     <div className="App">
       <Test 
