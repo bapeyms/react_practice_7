@@ -58,16 +58,48 @@ const testArr = [
 function App() {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState(0);
+  const [finished, setFinished] = useState(false);
+
   function nextQuestion() {
-    if (currentQuestion < testArr.length - 1) {
+    if(selectedAnswer === testArr[currentQuestion]) {
+      setScore(score + 1);
+    }
+    if (currentQuestion === testArr.length - 1){
+      setFinished(true);
+    }
+    else {
       setCurrentQuestion(currentQuestion + 1);
     }
   }
+  function skipQuestion() {
+    if (currentQuestion === testArr.length - 1){
+      setFinished(true);
+    }
+    else {
+      setCurrentQuestion(currentQuestion + 1);
+    }
+
+    if(finished) {
+      return (
+        <div>
+          <h1>Test finished!</h1>
+          <h2>
+            Correct answers: {score} / {testArr.length}
+          </h2>
+        </div>
+      )
+    }
+  }
+
+
   return (
     <div className="App">
       <Test 
       obj={testArr[currentQuestion]} 
       nextQuestion={nextQuestion}
+      skipQuestion={skipQuestion}
+      finished={currentQuestion === testArr.length - 1}
       />
     </div>
   );
